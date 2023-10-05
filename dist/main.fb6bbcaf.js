@@ -19370,11 +19370,43 @@ var define;
   }
 }.call(this));
 
-},{"buffer":"node_modules/buffer/index.js"}],"js/main.js":[function(require,module,exports) {
+},{"buffer":"node_modules/buffer/index.js"}],"js/getType.js":[function(require,module,exports) {
 "use strict";
 
-var _lodash = _interopRequireDefault(require("lodash"));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getType;
+// dataType을 확인하기 위한 getType 함수
+// 외부에서 사용하기 위해 export default(내보내지는 함수)로 선언
+function getType(data) {
+  return Object.prototype.toString.call(data).slice(8, -1);
+}
+},{}],"js/compareOp.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = compareOp;
+// 비교 연산자 (Comparison operator)
+
+// 재할당 불가능 변수 선언 const
+var a = 13;
+var b = 7;
+console.log(a > b);
+function compareOp(data1, data2) {
+  return data1 === data2;
+}
+},{}],"js/main.js":[function(require,module,exports) {
+"use strict";
+
+var _lodash = _interopRequireWildcard(require("lodash"));
+var _getType = _interopRequireDefault(require("../js/getType"));
+var _compareOp = _interopRequireDefault(require("../js/compareOp"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 // var username = document.querySelector("#username");
 // var userpassword = document.querySelector("#userpassword");
 
@@ -19392,7 +19424,18 @@ els.forEach(function (el) {
 console.log("Hello Js");
 console.log("parcel test");
 console.log(_lodash.default.camelCase("camel test"));
-},{"lodash":"node_modules/lodash/lodash.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+// dataType 확인
+console.log((0, _getType.default)(123));
+console.log((0, _getType.default)(false));
+console.log((0, _getType.default)("TEXT"));
+console.log((0, _getType.default)(null));
+console.log((0, _getType.default)({}));
+console.log((0, _getType.default)([]));
+
+// 비교 연산자 (Comparison operator)
+console.log((0, _compareOp.default)(1, 2));
+},{"lodash":"node_modules/lodash/lodash.js","../js/getType":"js/getType.js","../js/compareOp":"js/compareOp.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

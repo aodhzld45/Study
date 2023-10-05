@@ -1,4 +1,6 @@
-import _ from "lodash";
+import _, { get } from "lodash";
+import getType from "../js/getType";
+import compareOp from "../js/compareOp";
 // var username = document.querySelector("#username");
 // var userpassword = document.querySelector("#userpassword");
 
@@ -17,5 +19,17 @@ els.forEach(el => {
 console.log("Hello Js");
 console.log("parcel test");
 console.log(_.camelCase("camel test"));
+
+// dataType 확인
+console.log(getType(123));
+console.log(getType(false));
+console.log(getType("TEXT"));
+console.log(getType(null));
+console.log(getType({}));
+console.log(getType([]));
+
+// 비교 연산자 (Comparison operator)
+console.log(compareOp(1,2));
+
 
 
