@@ -14,7 +14,7 @@ const els = document.querySelectorAll('div')
 els.forEach(el => {
     console.log(el.dataset.fruitName)
 })
-
+console.log("Hello Js");
 console.log("parcel test");
 console.log(_.camelCase("camel test"));
 

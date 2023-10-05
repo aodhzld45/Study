@@ -19389,6 +19389,7 @@ var els = document.querySelectorAll('div');
 els.forEach(function (el) {
   console.log(el.dataset.fruitName);
 });
+console.log("Hello Js");
 console.log("parcel test");
 console.log(_lodash.default.camelCase("camel test"));
 },{"lodash":"node_modules/lodash/lodash.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
