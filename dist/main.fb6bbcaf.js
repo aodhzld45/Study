@@ -19435,6 +19435,15 @@ console.log((0, _getType.default)([]));
 
 // 비교 연산자 (Comparison operator)
 console.log((0, _compareOp.default)(1, 2));
+var a = 1 === 1;
+var b = 'AB' === 'AB';
+var c = false;
+console.log(a);
+console.log(b);
+console.log(c);
+console.log('&&: ', a && b); // 비굣값이 전부 일치
+console.log('||: ', a || b || c); // 비굣값이 하나라도 일치
+console.log('!: ', !a); // 비굣값의 반대
 },{"lodash":"node_modules/lodash/lodash.js","../js/getType":"js/getType.js","../js/compareOp":"js/compareOp.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

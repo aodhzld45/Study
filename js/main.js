@@ -31,5 +31,18 @@ console.log(getType([]));
 // 비교 연산자 (Comparison operator)
 console.log(compareOp(1,2));
 
+const a = 1 === 1
+const b = 'AB' === 'AB'
+const c = false
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+console.log('&&: ', a && b); // 비굣값이 전부 일치
+console.log('||: ', a || b || c); // 비굣값이 하나라도 일치
+console.log('!: ', !a); // 비굣값의 반대
+
+
 
 
