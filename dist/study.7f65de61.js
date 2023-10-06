@@ -124,15 +124,25 @@ boxEls.forEach(function (boxEl, index) {
   console.log(index, boxEl);
 });
 
-//요소 하나만 select
+// 요소 하나만 select
 var boxEl = document.querySelector('.box');
 
-//Getter, 값을 얻는 용도
+// Getter, 값을 얻는 용도
 console.log(boxEl.textContent); // Box!!
 
-//Setter, 값을 지정하는 용도
+// Setter, 값을 지정하는 용도
 boxEl.textContent = 'Seo Js Study!!'; // 문자열 데이터를 지정
 console.log(boxEl.textContent); // Box!!
+
+// 메소드 체이닝
+var testText = 'Seo~';
+// split : 문자를 인수 기준으로 쪼개서 배열로 반환.
+// reverse : 배열을 뒤집기.
+// join : 배열을 인수 기준으로 분자로 병합해 반환.
+var methodChaining = testText.split('').reverse().join(''); // 메소드 체이닝
+
+console.log(testText);
+console.log(methodChaining);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
