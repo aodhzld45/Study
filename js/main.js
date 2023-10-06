@@ -1,6 +1,7 @@
 import _, { get } from "lodash";
 import getType from "../js/getType";
-import compareOp from "../js/compareOp";
+import compareOp from "./operator";
+import random from "./getRandom";
 // var username = document.querySelector("#username");
 // var userpassword = document.querySelector("#userpassword");
 
@@ -12,10 +13,11 @@ import compareOp from "../js/compareOp";
 //     alert(userpassword.value);
 // }
 
-const els = document.querySelectorAll('div')
-els.forEach(el => {
-    console.log(el.dataset.fruitName)
-})
+// const els = document.querySelectorAll('div')
+// els.forEach(el => {
+//     console.log(el.dataset.fruitName)
+// })
+
 console.log("Hello Js");
 console.log("parcel test");
 console.log(_.camelCase("camel test"));
@@ -42,6 +44,23 @@ console.log(c);
 console.log('&&: ', a && b); // 비굣값이 전부 일치
 console.log('||: ', a || b || c); // 비굣값이 하나라도 일치
 console.log('!: ', !a); // 비굣값의 반대
+
+
+// 삼항 연산자(ternary operator)
+console.log(a ? 'true' : 'false' );
+
+// // 조건문 (if statement)
+// const num = random()
+
+///////////////////////////////////////////////
+const boxEls = document.querySelectorAll('.box');
+
+boxEls.forEach(function (boxEl, index) {
+    boxEl.classList.add(`order-${index + 1}`);
+    console.log(index, boxEl);
+})
+
+
 
 
 

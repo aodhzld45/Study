@@ -19382,7 +19382,7 @@ exports.default = getType;
 function getType(data) {
   return Object.prototype.toString.call(data).slice(8, -1);
 }
-},{}],"js/compareOp.js":[function(require,module,exports) {
+},{}],"js/operator.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19398,12 +19398,23 @@ console.log(a > b);
 function compareOp(data1, data2) {
   return data1 === data2;
 }
+},{}],"js/getRandom.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = random;
+function random() {
+  return Math.floor(Math.random() * 10);
+}
 },{}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
 var _lodash = _interopRequireWildcard(require("lodash"));
 var _getType = _interopRequireDefault(require("../js/getType"));
-var _compareOp = _interopRequireDefault(require("../js/compareOp"));
+var _operator = _interopRequireDefault(require("./operator"));
+var _getRandom = _interopRequireDefault(require("./getRandom"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -19417,10 +19428,11 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 //     alert(username.value);
 //     alert(userpassword.value);
 // }
-var els = document.querySelectorAll('div');
-els.forEach(function (el) {
-  console.log(el.dataset.fruitName);
-});
+
+// const els = document.querySelectorAll('div')
+// els.forEach(el => {
+//     console.log(el.dataset.fruitName)
+// })
 console.log("Hello Js");
 console.log("parcel test");
 console.log(_lodash.default.camelCase("camel test"));
@@ -19434,7 +19446,7 @@ console.log((0, _getType.default)({}));
 console.log((0, _getType.default)([]));
 
 // 비교 연산자 (Comparison operator)
-console.log((0, _compareOp.default)(1, 2));
+console.log((0, _operator.default)(1, 2));
 var a = 1 === 1;
 var b = 'AB' === 'AB';
 var c = false;
@@ -19444,7 +19456,20 @@ console.log(c);
 console.log('&&: ', a && b); // 비굣값이 전부 일치
 console.log('||: ', a || b || c); // 비굣값이 하나라도 일치
 console.log('!: ', !a); // 비굣값의 반대
-},{"lodash":"node_modules/lodash/lodash.js","../js/getType":"js/getType.js","../js/compareOp":"js/compareOp.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+// 삼항 연산자(ternary operator)
+console.log(a ? 'true' : 'false');
+
+// // 조건문 (if statement)
+// const num = random()
+
+///////////////////////////////////////////////
+var boxEls = document.querySelectorAll('.box');
+boxEls.forEach(function (boxEl, index) {
+  boxEl.classList.add("order-".concat(index + 1));
+  console.log(index, boxEl);
+});
+},{"lodash":"node_modules/lodash/lodash.js","../js/getType":"js/getType.js","./operator":"js/operator.js","./getRandom":"js/getRandom.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -19469,7 +19494,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57444" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62946" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

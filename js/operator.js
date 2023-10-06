@@ -9,3 +9,4 @@ console.log((a > b));
 export default  function compareOp(data1, data2) {
     return data1 === data2;
 }
+
