@@ -1,4 +1,5 @@
 import lodash from "lodash";
+import scope from "./variableScope";
 
 const boxEls = document.querySelectorAll('.box');
 
@@ -48,5 +49,9 @@ console.log(fruits[1]);
 // 7. 가져온 js 파일을 HTML 문서 분석 이후에 실행하도록 지시하는 HTML 속성 = defer / ex) <script defer src="./js/study.js"></script>
 
 /* =================================== */
+
+// 2023-10-23 study
+// 변수의 유효 범위
+scope
 
 

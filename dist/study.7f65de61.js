@@ -19370,10 +19370,34 @@ var define;
   }
 }.call(this));
 
-},{"buffer":"node_modules/buffer/index.js"}],"js/study.js":[function(require,module,exports) {
+},{"buffer":"node_modules/buffer/index.js"}],"js/variableScope.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = scope;
+// 변수의 유효 범위 (Variable Scope)
+// var, let, const 
+
+function scope() {
+  if (true) {
+    console.log(a);
+    var a = 123;
+  }
+}
+
+// var, let const
+// 1. var - 재할당 및 업데이트가 가능 / 선언되면 ({}) 중괄호에 국한된다.
+// 2. let - 업데이트는 가능하지만 재할당은 불가능 
+// 3. const - 일정한 상수값을 유지 -> 재할당 및 업데이트가 불가능
+
+// -> var와 let은 초기화 하지 않은 상태에서 선언이 가능 / const는 선언중에 초기화 해야한다.
+},{}],"js/study.js":[function(require,module,exports) {
 "use strict";
 
 var _lodash = _interopRequireDefault(require("lodash"));
+var _variableScope = _interopRequireDefault(require("./variableScope"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var boxEls = document.querySelectorAll('.box');
 boxEls.forEach(function (boxEl, index) {
@@ -19421,7 +19445,11 @@ console.log(fruits[1]);
 // 7. 가져온 js 파일을 HTML 문서 분석 이후에 실행하도록 지시하는 HTML 속성 = defer / ex) <script defer src="./js/study.js"></script>
 
 /* =================================== */
-},{"lodash":"node_modules/lodash/lodash.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+// 2023-10-23 study
+// 변수의 유효 범위
+_variableScope.default;
+},{"lodash":"node_modules/lodash/lodash.js","./variableScope":"js/variableScope.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
