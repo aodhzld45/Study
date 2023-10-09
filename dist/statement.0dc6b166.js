@@ -161,6 +161,25 @@ switch (a) {
     console.log('나머지 결과값.');
     break;
 }
+
+// 반복문 (For Statement)
+// for (시작조건: 종료조건: 변화조건) {}
+
+var ulEL = document.querySelector('ul');
+var _loop = function _loop() {
+  var li = document.createElement('li');
+  li.textContent = "list-".concat(i + 1);
+  if ((i + 1) % 2 === 0) {
+    // 짝수 li 부분만 클릭시 이벤트 발생하도록 조건문 추가.
+    li.addEventListener('click', function () {
+      console.log(li.textContent);
+    });
+  }
+  ulEL.appendChild(li);
+};
+for (var i = 0; i < 10; i += 1) {
+  _loop();
+}
 },{"./getRandom":"js/getRandom.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
