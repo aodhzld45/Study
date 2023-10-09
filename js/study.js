@@ -47,5 +47,6 @@ console.log(fruits[1]);
 
 // 7. 가져온 js 파일을 HTML 문서 분석 이후에 실행하도록 지시하는 HTML 속성 = defer / ex) <script defer src="./js/study.js"></script>
 
+/* =================================== */
 
 

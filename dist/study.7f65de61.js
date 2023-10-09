@@ -19419,6 +19419,8 @@ console.log(fruits[1]);
 /* *함수 선언 func - function name(params) {} */
 
 // 7. 가져온 js 파일을 HTML 문서 분석 이후에 실행하도록 지시하는 HTML 속성 = defer / ex) <script defer src="./js/study.js"></script>
+
+/* =================================== */
 },{"lodash":"node_modules/lodash/lodash.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -19444,7 +19446,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62946" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58579" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
