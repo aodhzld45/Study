@@ -50,12 +50,12 @@ console.log(fruits[1]);
 
 /* =================================== */
 
-// 2023-10-23 study
+// 2023-10-09 study
 // 변수의 유효 범위
 console.log(scope());
 
 // JS 함수
-// 화살표 함수
+// * 화살표 함수
 // () => {} vs function () {}
 const doubleArrow = x => x*2
 
@@ -65,12 +65,39 @@ const textContent = x => ({name : 'Seo'});
 console.log('doubleArrow', doubleArrow(7));  
 console.log('objectData', textContent());
 
-// 즉시 실행 함수 (IFFE)
+// * 즉시 실행 함수 (IFFE)
 const iffeFunc = 7;
 
 (function () {
     console.log('즉시 실핸 함수 결과값 - ',iffeFunc*2);
 })();
+
+// * 함수의 호이스팅
+// - 함수의 선언부가 유효범위의 최상단으로 끌어올려지는 현상
+
+const hoisting = 7;
+
+hoistingDouble() // -> 함수의 선언보다 위로 끌어올려져 작성해도 정상 작동.
+
+// 함수의 선언 
+function hoistingDouble() {
+    console.log('호이스팅으로 끌어올려진 실행값 :', hoisting * 2)
+}
+
+// * 타이머 함수
+// -setTimeout(함수, 시간): 일정 시간 후 함수 실행
+// -setInterval(함수, 시간): 시간 간격마다 함수 실행
+// -clearTimeout(): 설정된 Timeout 함수를 종료
+// -clearInterval(): 설정된 Interval 함수를 종료
+
+// setTimeout(function () {console.log('setTimeout 3초');}, 3000)
+const timer = setTimeout(() => {console.log('화살표 함수 setTimeout 3초')}, 3000)
+
+const h1El = document.querySelector('h1')
+h1El.addEventListener('click', () => {
+    clearTimeout(timer)
+})
+
 
 
 
