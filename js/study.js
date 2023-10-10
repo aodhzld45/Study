@@ -52,6 +52,25 @@ console.log(fruits[1]);
 
 // 2023-10-23 study
 // 변수의 유효 범위
-scope
+console.log(scope());
+
+// JS 함수
+// 화살표 함수
+// () => {} vs function () {}
+const doubleArrow = x => x*2
+
+// 객체 데이터를 다룰때는 소괄호로 감싸야 한다.
+const textContent = x => ({name : 'Seo'});
+
+console.log('doubleArrow', doubleArrow(7));  
+console.log('objectData', textContent());
+
+// 즉시 실행 함수 (IFFE)
+const iffeFunc = 7;
+
+(function () {
+    console.log('즉시 실핸 함수 결과값 - ',iffeFunc*2);
+})();
+
 
 

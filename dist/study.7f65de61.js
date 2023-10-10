@@ -19448,7 +19448,29 @@ console.log(fruits[1]);
 
 // 2023-10-23 study
 // 변수의 유효 범위
-_variableScope.default;
+console.log((0, _variableScope.default)());
+
+// JS 함수
+// 화살표 함수
+// () => {} vs function () {}
+var doubleArrow = function doubleArrow(x) {
+  return x * 2;
+};
+
+// 객체 데이터를 다룰때는 소괄호로 감싸야 한다.
+var textContent = function textContent(x) {
+  return {
+    name: 'Seo'
+  };
+};
+console.log('doubleArrow', doubleArrow(7));
+console.log('objectData', textContent());
+
+// 즉시 실행 함수 (IFFE)
+var iffeFunc = 7;
+(function () {
+  console.log('즉시 실핸 함수 결과값 - ', iffeFunc * 2);
+})();
 },{"lodash":"node_modules/lodash/lodash.js","./variableScope":"js/variableScope.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -19474,7 +19496,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58579" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49935" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
