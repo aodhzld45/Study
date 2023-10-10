@@ -97,7 +97,22 @@ const h1El = document.querySelector('h1')
 h1El.addEventListener('click', () => {
     clearTimeout(timer)
 })
+    
+// * 콜백 함수(callback Function)
+// 함수의 인수로 사용되는 함수
 
+// ex) setTimeout(함수, 시간)
+function timeout() {
+    setTimeout(() => {
+        console.log('seo')
+    }, 3000)
+};
+
+timeout(() => {
+    console.log('Done');
+})
+// *** 다른 함수가 실행을 끝낸뒤 실행되는 함수 -> js에서 함수는 object(객체)로 취급 
+// 고차함수라고도 한다.
 
 
 
